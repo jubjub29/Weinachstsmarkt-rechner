@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+    
+<link rel="stylesheet" href="style.css">
+   
+    <script>
+    function Delz() {
+        document.getElementById('ergebnissz').innerHTML = "0";
+    }
+    function calculateResultz(NUMMER) {
+        document.getElementById('ergebnissz').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnissz');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+        }
+        function Delr() {
+        document.getElementById('ergebnissr').innerHTML = "0";
+    }
+    function calculateResultr(NUMMER) {
+        document.getElementById('ergebnissr').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnissr');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+        }
+    function Dels() {
+        document.getElementById('ergebnisss').innerHTML = "0";
+    }
+    function calculateResults(NUMMER) {
+        document.getElementById('ergebnisss').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnisss');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function calculateResultsu() {
+
+        document.getElementById('ergebnisssu').innerHTML =
+        document.getElementById('ergebnissr').innerHTML + "*3" 
+        + "-("+ document.getElementById('ergebnissz').innerHTML + "*1)"
+        + "+("+ document.getElementById('ergebnisss').innerHTML + "*0.5)" ;
+        
+        let container = document.getElementById('ergebnisssu');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+
+        }
+
+
+
+    </script>
+</head>
+<body>
+<table >
+<tr>
+    <td>Pfand</td>
+    <td onclick="calculateResultz(1),calculateResultsu()">1</td>
+    <td onclick="calculateResultz(5),calculateResultsu()">5</td>
+    <td onclick="calculateResultz(10),calculateResultsu()">10</td>
+    <td>Summe Tassen: </td>
+    <td><div id="ergebnissz">0</div></td>
+    <td class="DEL" onclick="Delz(),calculateResultsu()">DEL</td>
+</tr>
+<tr>
+    <td>Glühwein</td>
+    <td onclick="calculateResultr(1),calculateResultsu()">1</td>
+    <td onclick="calculateResultr(5),calculateResultsu()">5</td>
+    <td onclick="calculateResultr(10),calculateResultsu()">10</td>
+    <td>Summe Tassen:</td>
+    <td><div id="ergebnissr">0</div></td>
+    <td class="DEL"onclick="Delr(),calculateResultsu()">DEL</td>
+</tr>
+<tr>
+    <td>Schuss</td>
+    <td onclick="calculateResults(1),calculateResultsu()">1</td>
+    <td onclick="calculateResults(5),calculateResultsu()">5</td>
+    <td onclick="calculateResults(10),calculateResultsu()">10</td>
+    <td>Summe Schuss: </td>
+    <td><div id="ergebnisss">0</div></td>
+    <td class="DEL"onclick="Dels(),calculateResultsu()">DEL</td>
+</tr>
+<tr>
+    <td onclick="calculateResultsu()">Summe</td>
+    <td><div id="ergebnisssu"></div></td>
+    <td>€</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="DEL"onclick="Delz(),Delr(),Dels(),calculateResultsu()">DEL ALL </td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
