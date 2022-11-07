@@ -36,6 +36,12 @@
         let result = eval(container.innerHTML );
         container.innerHTML = result;
     }
+    function calculateResultB(NUMMER) {
+        document.getElementById('ergebnissB').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnissB');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
     function calculateResultsu() {
 
         document.getElementById('ergebnisssu').innerHTML =
@@ -83,12 +89,12 @@
     <td class="DEL"onclick="Dels(),calculateResultsu()">DEL</td>
 </tr>
 <tr>
-    <td onclick="calculateResultsu()">Summe</td>
+    <td class="nummer" onclick="calculateResultB(1),calculateResultsu()"><div id="ergebnissB">Bier:</div></td>
+    <td class="nummer" onclick="calculateResultK(1),calculateResultsu()">Softgetränk:</td>
     <td></td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td  class="nummer"><div id="ergebnisssu"></div></td>
+    <td>Gesamt Summe:</td>
+    <td  class="nummer"><div id="ergebnisssu">0</div></td>
     <td class="DEL"onclick="Delz(),Delr(),Dels(),calculateResultsu()">DEL ALL </td>
 
 </tr>
