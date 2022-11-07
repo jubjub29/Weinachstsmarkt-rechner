@@ -64,6 +64,9 @@
         if (isNaN (document.getElementById('ergebnissK').innerHTML)){
             document.getElementById('ergebnissK').innerHTML = "0"; 
         }
+        if (isNaN (document.getElementById('ergebniss').innerHTML)){
+            document.getElementById('ergebnissK').innerHTML = "0"; 
+        }
 
         document.getElementById('ergebnisssu').innerHTML =
         document.getElementById('ergebnissr').innerHTML + "*3" 
@@ -71,6 +74,7 @@
         + "+("+ document.getElementById('ergebnisss').innerHTML + "*0.5)"
         + "+("+ document.getElementById('ergebnissB').innerHTML + "*1.5)"
         + "+("+ document.getElementById('ergebnissK').innerHTML + "*1)"
+        + "+("+ document.getElementById('ergebnissW').innerHTML + "*0.5)"
         ;
         
         let container = document.getElementById('ergebnisssu');
@@ -84,7 +88,10 @@
         {
             document.getElementById('ergebnissK').innerHTML ="Softgetränk: ";   
         }
-
+        if (document.getElementById('ergebnissW').innerHTML == "0")
+        {
+            document.getElementById('ergebnissW').innerHTML ="Wasser: ";   
+        }
 
 
         }
@@ -96,7 +103,7 @@
 <body>
 <table >
 <tr>
-    <td>Pfand</td>
+    <td>Pfand  Rückgabe</td>
     <td class="nummer" onclick="calculateResultz(1),calculateResultsu()">1</td>
     <td class="nummer" onclick="calculateResultz(5),calculateResultsu()">5</td>
     <td class="nummer" onclick="calculateResultz(10),calculateResultsu()">10</td>
@@ -125,8 +132,8 @@
 <tr>
     <td class="nummer" onclick="calculateResultB(1),calculateResultsu()"><div id="ergebnissB">Bier: </div></td>
     <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Softgetränk: </div></td>
-    <td></td>
-    <td></td>
+    <td class="nummer" onclick="calculateResultW(1),calculateResultsu()"><div id="ergebnissW">Wasser: </div>></td>
+    <td class="DEL"onclick=" DelB() DelK(),calculateResultsu()"> DEL </td>
     <td>Gesamt Summe:</td>
     <td class="nummer"><div id="ergebnisssu">0</div></td>
     <td class="DEL"onclick="Delz(),Delr(), DelB(), DelK(),Dels(),calculateResultsu()">DEL ALL </td>
