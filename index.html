@@ -42,6 +42,18 @@
         let result = eval(container.innerHTML );
         container.innerHTML = result;
     }
+    function DelB() {
+        document.getElementById('ergebnissB').innerHTML = "Bier";
+    }
+    function calculateResultK(NUMMER) {
+        document.getElementById('ergebnissK').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnissK');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function DelK() {
+        document.getElementById('ergebnissB').innerHTML = "Softgetränk";
+    }
     function calculateResultsu() {
 
         document.getElementById('ergebnisssu').innerHTML =
@@ -90,12 +102,12 @@
 </tr>
 <tr>
     <td class="nummer" onclick="calculateResultB(1),calculateResultsu()"><div id="ergebnissB">Bier:</div></td>
-    <td class="nummer" onclick="calculateResultK(1),calculateResultsu()">Softgetränk:</td>
+    <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Softgetränk:</div></td>
     <td></td>
     <td></td>
     <td>Gesamt Summe:</td>
-    <td  class="nummer"><div id="ergebnisssu">0</div></td>
-    <td class="DEL"onclick="Delz(),Delr(),Dels(),calculateResultsu()">DEL ALL </td>
+    <td class="nummer"><div id="ergebnisssu">0</div></td>
+    <td class="DEL"onclick="Delz(),Delr(), DelB(), DelK(),Dels(),calculateResultsu()">DEL ALL </td>
 
 </tr>
 
