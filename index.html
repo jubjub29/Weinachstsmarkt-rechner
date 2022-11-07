@@ -58,15 +58,11 @@
 
     function calculateResultsu() {
 
-        if (isNaN (document.getElementById('ergebnissB').value)) {  
+        if (isNaN (document.getElementById('ergebnissB').innerHTML)) {  
             document.getElementById('ergebnissB').innerHTML = "0";
-        } else {
-                
         }
-        if (isNaN (document.getElementById('ergebnissK').value)){
+        if (isNaN (document.getElementById('ergebnissK').innerHTML)){
             document.getElementById('ergebnissK').innerHTML = "0"; 
-        }else {
-                
         }
 
         document.getElementById('ergebnisssu').innerHTML =
@@ -127,8 +123,8 @@
     <td class="DEL"onclick="Dels(),calculateResultsu()">DEL</td>
 </tr>
 <tr>
-    <td class="nummer" onclick="calculateResultB(1),calculateResultsu()"><div id="ergebnissB">Bier:</div></td>
-    <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Softgetränk:</div></td>
+    <td class="nummer" onclick="calculateResultB(1),calculateResultsu()"><div id="ergebnissB">Bier: </div></td>
+    <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Softgetränk: </div></td>
     <td></td>
     <td></td>
     <td>Gesamt Summe:</td>
