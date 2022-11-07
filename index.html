@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.css">
    <link rel="manifest" href="manifest.webmanifest">
     <script>
+
+        //--------------Summieren und deliten
     function Delz() {
         document.getElementById('ergebnissz').innerHTML = "0";
     }
@@ -55,7 +57,17 @@
     function DelK() {
         document.getElementById('ergebnissK').innerHTML = "Softgetränk: ";
     }
+    function calculateResultW(NUMMER) {
+        document.getElementById('ergebnissW').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnissW');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function DelW() {
+        document.getElementById('ergebnissW').innerHTML = "Wasser: ";
+    }
 
+    //---------------------Zusammen rechnen-------------------------------------------------
     function calculateResultsu() {
 
         if (isNaN (document.getElementById('ergebnissB').innerHTML)) {  
@@ -64,10 +76,10 @@
         if (isNaN (document.getElementById('ergebnissK').innerHTML)){
             document.getElementById('ergebnissK').innerHTML = "0"; 
         }
-        if (isNaN (document.getElementById('ergebniss').innerHTML)){
-            document.getElementById('ergebnissK').innerHTML = "0"; 
+        if (isNaN (document.getElementById('ergebnissW').innerHTML)){
+            document.getElementById('ergebnissW').innerHTML = "0"; 
         }
-
+        //ender der zeile immer der preis
         document.getElementById('ergebnisssu').innerHTML =
         document.getElementById('ergebnissr').innerHTML + "*3" 
         + "-("+ document.getElementById('ergebnissz').innerHTML + "*1)"
@@ -132,10 +144,10 @@
 <tr>
     <td class="nummer" onclick="calculateResultB(1),calculateResultsu()"><div id="ergebnissB">Bier: </div></td>
     <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Softgetränk: </div></td>
-    <td class="nummer" onclick="calculateResultW(1),calculateResultsu()"><div id="ergebnissW">Wasser: </div>></td>
-    <td class="DEL"onclick=" DelB() DelK(),calculateResultsu()"> DEL </td>
-    <td>Gesamt Summe:</td>
-    <td class="nummer"><div id="ergebnisssu">0</div></td>
+    <td class="nummer" onclick="calculateResultW(1),calculateResultsu()"><div id="ergebnissW">Wasser: </div></td>
+    <td class="DEL"onclick=" DelB(),DelK(),DelW(),calculateResultsu()"> DEL </td>
+    <td class="summe">Gesamt Summe:</td>
+    <td class="summe"><div id="ergebnisssu">0</div></td>
     <td class="DEL"onclick="Delz(),Delr(), DelB(), DelK(),Dels(),calculateResultsu()">DEL ALL </td>
 
 </tr>
