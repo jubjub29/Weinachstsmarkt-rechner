@@ -11,11 +11,12 @@ table{
     background-color: rgb(75, 75, 75);
     color: rgb(255, 255, 255);
     text-align: center;
+    font-weight: 400;
     
 }
 td{
     background-color: #141414;
-    width: 14.2%; 
+    width: 12.2%; 
 }
 td:hover{
     background-color: rgba(50, 50,50); 
@@ -25,7 +26,11 @@ td:hover{
 .DEL{
 background-color: rgb(80, 26, 26); 
 }
+.nummer{
+    font-size: 150%;
+}
+.summe{
+    font-size: 200%;  
+}
 
 
-
-   
