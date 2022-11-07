@@ -59,12 +59,12 @@
     function calculateResultsu() {
 
         if (isNaN (document.getElementById('ergebnissB').value)) {  
-            document.getElementById('ergebnissB').innerHTML = "";
+            document.getElementById('ergebnissB').innerHTML = "0";
         } else {
                 
         }
         if (isNaN (document.getElementById('ergebnissK').value)){
-            document.getElementById('ergebnissB').innerHTML = ""; 
+            document.getElementById('ergebnissK').innerHTML = "0"; 
         }else {
                 
         }
@@ -80,6 +80,16 @@
         let container = document.getElementById('ergebnisssu');
         let result = eval(container.innerHTML );
         container.innerHTML = result;
+        if (document.getElementById('ergebnissB').innerHTML == "0")
+        {
+            document.getElementById('ergebnissB').innerHTML ="Bier: ";   
+        }
+        if (document.getElementById('ergebnissK').innerHTML == "0")
+        {
+            document.getElementById('ergebnissK').innerHTML ="Softgetränk: ";   
+        }
+
+
 
         }
 
