@@ -76,7 +76,7 @@
         container.innerHTML = result;
     }
     function DelP() {
-        document.getElementById('ergebnissP').innerHTML = "Punsh: ";
+        document.getElementById('ergebnissP').innerHTML = "Punsch: ";
     }
 
     //---------------------Zusammen rechnen-------------------------------------------------
@@ -108,7 +108,7 @@
         container.innerHTML = result;
         if (document.getElementById('ergebnissP').innerHTML == "0")
         {
-            document.getElementById('ergebnissP').innerHTML ="Punsh: ";   
+            document.getElementById('ergebnissP').innerHTML ="Punsch: ";   
         }
         if (document.getElementById('ergebnissK').innerHTML == "0")
         {
@@ -165,7 +165,7 @@
     <td class="DEL"onclick="DelB(),calculateResultsu()">DEL</td>
 </tr>
 <tr>
-    <td class="nummer" onclick="calculateResultP(1),calculateResultsu()"><div id="ergebnissP">Punsh: </div></td>
+    <td class="nummer" onclick="calculateResultP(1),calculateResultsu()"><div id="ergebnissP">Punsch: </div></td>
     <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Soft getränk: </div></td>
     <td class="nummer" onclick="calculateResultW(1),calculateResultsu()"><div id="ergebnissW">Wasser: </div></td>
     <td class="DEL"onclick=" DelP(),DelK(),DelW(),calculateResultsu()"> DEL </td>
