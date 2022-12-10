@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="style.css">
    <link rel="manifest" href="manifest.webmanifest">
     <script>
-        //lockAllowed = window.screen.lockOrientation("portrait");
+    
 
         screen.orientation.lock("landscape");
         //--------------Summieren und deliten
-    function Delz() {
+    /*function Delz() {
         document.getElementById('ergebnissz').innerHTML = "0";
     }
     function calculateResultz(NUMMER) {
@@ -39,7 +39,7 @@
         let container = document.getElementById('ergebnisss');
         let result = eval(container.innerHTML );
         container.innerHTML = result;
-    }
+    }*/
     function calculateResultB(NUMMER) {
         document.getElementById('ergebnissB').innerHTML += "+" + NUMMER;
         let container = document.getElementById('ergebnissB');
@@ -57,7 +57,7 @@
         container.innerHTML = result;
     }
     function DelK() {
-        document.getElementById('ergebnissK').innerHTML = "Softgetränk: ";
+        document.getElementById('ergebnissK').innerHTML = "0";
     }
     function calculateResultW(NUMMER) {
         document.getElementById('ergebnissW').innerHTML += "+" + NUMMER;
@@ -66,9 +66,9 @@
         container.innerHTML = result;
     }
     function DelW() {
-        document.getElementById('ergebnissW').innerHTML = "Wasser: ";
+        document.getElementById('ergebnissW').innerHTML = "0";
     }
-
+/*
     function calculateResultP(NUMMER) {
         document.getElementById('ergebnissP').innerHTML += "+" + NUMMER;
         let container = document.getElementById('ergebnissP');
@@ -78,20 +78,62 @@
     function DelP() {
         document.getElementById('ergebnissP').innerHTML = "Punsch: ";
     }
+*/
+function calculateResult5(NUMMER) {
+        document.getElementById('ergebniss5').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebniss5');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function Del5() {
+        document.getElementById('ergebniss5').innerHTML = "Fünf: ";
+    }
+    function calculateResult10(NUMMER) {
+        document.getElementById('ergebniss10').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebniss10');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function Del10() {
+        document.getElementById('ergebniss10').innerHTML = "Zehn: ";
+    }
+    function calculateResult20(NUMMER) {
+        document.getElementById('ergebniss20').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebniss20');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function Del20() {
+        document.getElementById('ergebniss20').innerHTML = "Zwanzig: ";
+    }
+    function calculateResult50(NUMMER) {
+        document.getElementById('ergebniss50').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebniss50');
+        let result = eval(container.innerHTML );
+        container.innerHTML = result;
+    }
+    function Del50() {
+        document.getElementById('ergebniss50').innerHTML = "Fünfzig: ";
+    }
 
     //---------------------Zusammen rechnen-------------------------------------------------
     function calculateResultsu() {
 
-        if (isNaN (document.getElementById('ergebnissP').innerHTML)) {  
-            document.getElementById('ergebnissP').innerHTML = "0";
+        if (isNaN (document.getElementById('ergebniss5').innerHTML)) {  
+            document.getElementById('ergebniss5').innerHTML = "0";
         }
-        if (isNaN (document.getElementById('ergebnissK').innerHTML)){
-            document.getElementById('ergebnissK').innerHTML = "0"; 
+        
+        if (isNaN (document.getElementById('ergebniss10').innerHTML)){
+            document.getElementById('ergebniss10').innerHTML = "0"; 
         }
-        if (isNaN (document.getElementById('ergebnissW').innerHTML)){
-            document.getElementById('ergebnissW').innerHTML = "0"; 
+        if (isNaN (document.getElementById('ergebniss20').innerHTML)){
+            document.getElementById('ergebniss20').innerHTML = "0"; 
+        }
+        if (isNaN (document.getElementById('ergebniss50').innerHTML)){
+            document.getElementById('ergebniss50').innerHTML = "0"; 
         }
         //ender der zeile immer der preis
+        /*
         document.getElementById('ergebnisssu').innerHTML =
         document.getElementById('ergebnissr').innerHTML + "*3.5" 
         + "-("+ document.getElementById('ergebnissz').innerHTML + "*1)"
@@ -102,21 +144,36 @@
         + "+("+ document.getElementById('ergebnissP').innerHTML + "*3)"
         
         ;
-        
+        */
+        document.getElementById('ergebnisssu').innerHTML =
+        document.getElementById('ergebnissK').innerHTML + "*1.5"
+        + "+("+ document.getElementById('ergebnissB').innerHTML + "*2.5)"
+        + "+("+ document.getElementById('ergebnissW').innerHTML + "*1)"
+        + "-("+ document.getElementById('ergebniss5').innerHTML + "*5)"
+        + "-("+ document.getElementById('ergebniss10').innerHTML + "*10)"
+        + "-("+ document.getElementById('ergebniss20').innerHTML + "*20)"
+        + "-("+ document.getElementById('ergebniss50').innerHTML + "*50)"
+
+        ;
         let container = document.getElementById('ergebnisssu');
         let result = eval(container.innerHTML );
         container.innerHTML = result;
-        if (document.getElementById('ergebnissP').innerHTML == "0")
+        
+        if (document.getElementById('ergebniss5').innerHTML == "0")
         {
-            document.getElementById('ergebnissP').innerHTML ="Punsch: ";   
+            document.getElementById('ergebniss5').innerHTML ="Fünf: ";   
         }
-        if (document.getElementById('ergebnissK').innerHTML == "0")
+        if (document.getElementById('ergebniss10').innerHTML == "0")
         {
-            document.getElementById('ergebnissK').innerHTML ="Softgetränk: ";   
+            document.getElementById('ergebniss10').innerHTML ="Zehn: ";   
         }
-        if (document.getElementById('ergebnissW').innerHTML == "0")
+        if (document.getElementById('ergebniss20').innerHTML == "0")
         {
-            document.getElementById('ergebnissW').innerHTML ="Wasser: ";   
+            document.getElementById('ergebniss20').innerHTML ="Zwanzig: ";   
+        }
+        if (document.getElementById('ergebniss50').innerHTML == "0")
+        {
+            document.getElementById('ergebniss50').innerHTML ="Fünfzig: ";   
         }
 
 
@@ -156,22 +213,47 @@
     <td class="DEL"onclick="Dels(),calculateResultsu()">DEL</td>
 </tr>-->
 <tr>
-    <td>Bier/Radler/glüh</td>
+    <td >Wasser:</td>
+    <td class="nummer" onclick="calculateResultW(1),calculateResultsu()">1</td>
+    <td class="nummer" onclick="calculateResultW(5),calculateResultsu()">5</td>
+    <td class="nummer" onclick="calculateResultW(10),calculateResultsu()">10</td>
+    <td>Summe <br>Wasser: </td>
+    <td class="nummer"><div id="ergebnissW">0</div></td>
+    <td class="DEL"onclick="DelW(),calculateResultsu()">DEL</td>
+</tr>
+<tr>
+    <td  >Soft Getränk:</td>
+    <td class="nummer" onclick="calculateResultK(1),calculateResultsu()">1</td>
+    <td class="nummer" onclick="calculateResultK(5),calculateResultsu()">5</td>
+    <td class="nummer" onclick="calculateResultK(10),calculateResultsu()">10</td>
+    <td>Summe <br>Alkoholisch: </td>
+    <td class="nummer"><div id="ergebnissK">0</div></td>
+    <td class="DEL"onclick="DelK(),calculateResultsu()">DEL</td>
+</tr>
+
+
+<tr>
+    <td  >Bier<br>Radler<br>glüh<br>Sekt</td>
     <td class="nummer" onclick="calculateResultB(1),calculateResultsu()">1</td>
     <td class="nummer" onclick="calculateResultB(5),calculateResultsu()">5</td>
     <td class="nummer" onclick="calculateResultB(10),calculateResultsu()">10</td>
-    <td>Summe Schuss: </td>
+    <td>Summe <br>Soft Getränk: </td>
     <td class="nummer"><div id="ergebnissB">0</div></td>
     <td class="DEL"onclick="DelB(),calculateResultsu()">DEL</td>
 </tr>
+
 <tr>
-    <td class="nummer" onclick="calculateResultP(1),calculateResultsu()"><div id="ergebnissP">Punsch: </div></td>
+    <!-- <td class="nummer" onclick="calculateResultP(1),calculateResultsu()"><div id="ergebnissP">Punsch: </div></td>
     <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Soft getränk: </div></td>
     <td class="nummer" onclick="calculateResultW(1),calculateResultsu()"><div id="ergebnissW">Wasser: </div></td>
-    <td class="DEL"onclick=" DelP(),DelK(),DelW(),calculateResultsu()"> DEL </td>
+    <td class="DEL"onclick=" DelP(),DelK(),DelW(),calculateResultsu()"> DEL </td>-->
+    <td class="nummer" onclick="calculateResult5(1),calculateResultsu()"><div id="ergebniss5">Fünf: </div></td>
+    <td class="nummer" onclick="calculateResult10(1),calculateResultsu()"><div id="ergebniss10">Zehn: </div></td>
+    <td class="nummer" onclick="calculateResult20(1),calculateResultsu()"><div id="ergebniss20">Zwanzig: </div></td>
+    <td class="nummer" onclick="calculateResult50(1),calculateResultsu()"><div id="ergebniss50">Fünfzig: </div></td>
     <td >Gesamt Summe:</td>
     <td class="summe"><div id="ergebnisssu">0</div></td>
-    <td class="DEL"onclick="DelP(),Delz(),Delr(), DelB(),DelW(), DelK(),Dels(),calculateResultsu()">DEL ALL </td>
+    <td class="DEL"onclick="Del5(),Del50(),Del20(), DelB(),DelW(), DelK(),Del10(),calculateResultsu()">DEL ALL </td>
 
 </tr>
 
