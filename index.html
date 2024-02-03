@@ -12,34 +12,7 @@
     
 
         screen.orientation.lock("landscape");
-        //--------------Summieren und deliten
-    /*function Delz() {
-        document.getElementById('ergebnissz').innerHTML = "0";
-    }
-    function calculateResultz(NUMMER) {
-        document.getElementById('ergebnissz').innerHTML += "+" + NUMMER;
-        let container = document.getElementById('ergebnissz');
-        let result = eval(container.innerHTML );
-        container.innerHTML = result;
-        }
-        function Delr() {
-        document.getElementById('ergebnissr').innerHTML = "0";
-    }
-    function calculateResultr(NUMMER) {
-        document.getElementById('ergebnissr').innerHTML += "+" + NUMMER;
-        let container = document.getElementById('ergebnissr');
-        let result = eval(container.innerHTML );
-        container.innerHTML = result;
-        }
-    function Dels() {
-        document.getElementById('ergebnisss').innerHTML = "0";
-    }
-    function calculateResults(NUMMER) {
-        document.getElementById('ergebnisss').innerHTML += "+" + NUMMER;
-        let container = document.getElementById('ergebnisss');
-        let result = eval(container.innerHTML );
-        container.innerHTML = result;
-    }*/
+
     function calculateResultB(NUMMER) {
         document.getElementById('ergebnissB').innerHTML += "+" + NUMMER;
         let container = document.getElementById('ergebnissB');
@@ -68,17 +41,17 @@
     function DelW() {
         document.getElementById('ergebnissW').innerHTML = "0";
     }
-/*
-    function calculateResultP(NUMMER) {
-        document.getElementById('ergebnissP').innerHTML += "+" + NUMMER;
-        let container = document.getElementById('ergebnissP');
+
+    function calculateResults(NUMMER) {
+        document.getElementById('ergebnisss').innerHTML += "+" + NUMMER;
+        let container = document.getElementById('ergebnisss');
         let result = eval(container.innerHTML );
         container.innerHTML = result;
     }
-    function DelP() {
-        document.getElementById('ergebnissP').innerHTML = "Punsch: ";
+    function Dels() {
+        document.getElementById('ergebnisss').innerHTML = "0";
     }
-*/
+
 function calculateResult5(NUMMER) {
         document.getElementById('ergebniss5').innerHTML += "+" + NUMMER;
         let container = document.getElementById('ergebniss5');
@@ -141,7 +114,7 @@ function calculateResult5(NUMMER) {
         + "+("+ document.getElementById('ergebnissB').innerHTML + "*2.5)"
         + "+("+ document.getElementById('ergebnissK').innerHTML + "*1.5)"
         + "+("+ document.getElementById('ergebnissW').innerHTML + "*1)"
-        + "+("+ document.getElementById('ergebnissP').innerHTML + "*3)"
+        + "+("+ document.getElementById('ergebnisss').innerHTML + "*3)"
         
         ;
         */
@@ -150,6 +123,8 @@ function calculateResult5(NUMMER) {
         + "+("+ document.getElementById('ergebnissB').innerHTML + "*2.5)"
         + "+("+ document.getElementById('ergebnissW').innerHTML + "*1)"
         + "-("+ document.getElementById('ergebniss5').innerHTML + "*5)"
+        + "+("+ document.getElementById('ergebnisss').innerHTML + "*0.5)"
+       
         + "-("+ document.getElementById('ergebniss10').innerHTML + "*10)"
         + "-("+ document.getElementById('ergebniss20').innerHTML + "*20)"
         + "-("+ document.getElementById('ergebniss50').innerHTML + "*50)"
@@ -202,16 +177,16 @@ function calculateResult5(NUMMER) {
     <td>Summe Tassen:</td>
     <td class="nummer"><div id="ergebnissr">0</div></td>
     <td class="DEL"onclick="Delr(),calculateResultsu()">DEL</td>
-</tr>
+</tr>-->
 <tr>
-    <td>Schuss</td>
+    <td>Saft</td>
     <td class="nummer" onclick="calculateResults(1),calculateResultsu()">1</td>
     <td class="nummer" onclick="calculateResults(5),calculateResultsu()">5</td>
     <td class="nummer" onclick="calculateResults(10),calculateResultsu()">10</td>
-    <td>Summe Schuss: </td>
+    <td>Summe Saft: </td>
     <td class="nummer"><div id="ergebnisss">0</div></td>
     <td class="DEL"onclick="Dels(),calculateResultsu()">DEL</td>
-</tr>-->
+</tr>
 <tr>
     <td >Wasser:</td>
     <td class="nummer" onclick="calculateResultW(1),calculateResultsu()">1</td>
@@ -243,7 +218,7 @@ function calculateResult5(NUMMER) {
 </tr>
 
 <tr>
-    <!-- <td class="nummer" onclick="calculateResultP(1),calculateResultsu()"><div id="ergebnissP">Punsch: </div></td>
+    <!-- <td class="nummer" onclick="calculateResultP(1),calculateResultsu()"><div id="ergebnisss">Punsch: </div></td>
     <td class="nummer" onclick="calculateResultK(1),calculateResultsu()"><div id="ergebnissK">Soft getränk: </div></td>
     <td class="nummer" onclick="calculateResultW(1),calculateResultsu()"><div id="ergebnissW">Wasser: </div></td>
     <td class="DEL"onclick=" DelP(),DelK(),DelW(),calculateResultsu()"> DEL </td>-->
